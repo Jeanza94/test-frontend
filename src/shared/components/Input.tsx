@@ -1,4 +1,3 @@
-
 import { FC, InputHTMLAttributes } from 'react'
 
 interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement>{}

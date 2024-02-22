@@ -1,4 +1,3 @@
-import React from 'react'
 import SearchLogo from '@/shared/components/SearchLogo'
 import Input from '@/shared/components/Input'
 
@@ -10,7 +9,10 @@ const FormSearchProducts = () => {
             type='text'
             placeholder='Nunca dejes de buscar'
           />
-          <button className='p-2 bg-slate-100 hover:bg-slate-400 transition-colors ease-in duration-200'>
+          <button 
+            className='p-2 bg-slate-100 hover:bg-slate-400 transition-colors ease-in duration-200'
+            title='Buscar productos'
+          >
             <SearchLogo />
           </button>
         </label>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SearchLogo = () => {
   return (      
     <svg width="20px" height="20px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
