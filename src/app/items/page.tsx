@@ -1,11 +1,26 @@
+import { Suspense } from "react"
+import ProductCardContainerItemsPage from "./components/ProductCardContainerItemsPage"
 
-const ItemsPage = () => {
+interface PropsItemsPage {
+  searchParams: {
+    q?: string,
+    limit?: string
+  }
+}
+
+const ItemsPage = ({searchParams}: PropsItemsPage) => {
+  
+  const {q, limit} = searchParams
   return (
-    <>
-      <section>
-        <h1>pagina item</h1>
-      </section>
-    </>
+    <div>
+      <Suspense key={`product${q ? q : '' }`} fallback={<p>cargando</p>}>
+        <ProductCardContainerItemsPage 
+          query={q}
+          limit={limit}
+          key={`item${q}`}
+        />
+      </Suspense>
+    </div>
   )
 }
 
