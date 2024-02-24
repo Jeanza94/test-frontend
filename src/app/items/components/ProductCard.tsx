@@ -2,6 +2,7 @@ import { FC } from "react"
 import Image from "next/image"
 import { Product } from "../interfaces/product"
 import Link from "next/link"
+import ProductPicture from "./ProductPicture"
 
 interface PropsProductCard {
   product: Product
@@ -10,15 +11,7 @@ interface PropsProductCard {
 const ProductCard:FC<PropsProductCard> = ({product}) => {
   return (
     <div className="w-full border-2 rounded-xl p-2 tablet:w-60 flex flex-col gap-2 hover:scale-105 transition all ease-in duration-200">
-      <picture className="w-full flex justify-center">
-        <Image 
-          src={product.image}
-          alt={`Product ${product.title}`}
-          width={90}
-          height={90}
-          className="w-20 tablet:w-32 h-auto"
-        />
-      </picture>
+      <ProductPicture productImage={product.image}/>
       <p 
         className="text-sm text-center text-gray-500 mobile:hidden tablet:block"
         title={product.title}

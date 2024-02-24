@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { FreeMarketResponseProducts } from '../interfaces/freeMarket';
 import { mapFreeMarketItemToProduct } from "../utils/freeMarketProductMapper";
-import ProductCard from "./ProductCard";
+import ProductCardView from "./ProductCardView";
 
 interface PropProductContainerItemsPage {
   query?: string,
@@ -35,7 +35,7 @@ const ProductCardContainerItemsPage:FC<PropProductContainerItemsPage> = async({l
     <section>
       {
         products.map(product => (
-          <ProductCard product={product} key={product.id}/>
+          <ProductCardView product={product} key={product.id}/>
         ))
       }
     </section>

@@ -2,6 +2,7 @@ import { FC } from "react"
 import Image from "next/image"
 import { ProductDetailed } from "../interfaces/product"
 import Button from "@/app/shared/components/Button"
+import ProductPicture from "./ProductPicture"
 
 interface PropsProductCardDetailed {
   product: ProductDetailed
@@ -21,15 +22,7 @@ const ProductCardDetailed: FC<PropsProductCardDetailed> = ({product}) => {
   return (
     <div className="w-full tablet:w-[600px] desktop:w-[800px] border-2 border-gray-100 rounded-sm p-4">
       <div className="flex flex-col gap-y-2 gap-x-36 items-center tablet:flex-row tablet:justify-center">
-        <picture className="flex justify-center">
-          <Image 
-            src={image}
-            alt={`product ${id}`}
-            width={90}
-            height={90}
-            className="w-40 h-auto"
-          />
-        </picture>
+        <ProductPicture productImage={image} />
         <div className="text-sm flex flex-col gap-2 tablet:w-52 ">
           <h5 className="font-medium">
             {condition} - {totalSelled} vendidos
