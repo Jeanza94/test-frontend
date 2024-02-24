@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import FormSearchProducts from '@/products/components/FormSearchProducts'
+import FormSearchProducts from '@/app/items/components/FormSearchProducts'
+
 
 const Header = () => {
   return (

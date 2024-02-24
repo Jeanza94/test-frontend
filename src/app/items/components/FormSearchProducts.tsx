@@ -1,5 +1,5 @@
-import SearchLogo from '@/shared/components/SearchLogo'
-import Input from '@/shared/components/Input'
+import SearchLogo from '@/app/shared/components/SearchLogo'
+import Input from '@/app/shared/components/Input'
 
 const FormSearchProducts = () => {
   return (
