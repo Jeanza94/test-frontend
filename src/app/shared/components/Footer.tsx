@@ -7,6 +7,7 @@ const Footer = () => {
       {
         socialNetworks.map(({href, name}) => (
           <Link
+            key={name}
             target="_blank"
             href={href}
             className="text-white font-bold capitalize hover:shadow-sm hover:shadow-white p-2 transition-all ease-in duration-200"
