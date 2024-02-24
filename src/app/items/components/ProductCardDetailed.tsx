@@ -3,6 +3,7 @@ import Image from "next/image"
 import { ProductDetailed } from "../interfaces/product"
 import Button from "@/app/shared/components/Button"
 import ProductPicture from "./ProductPicture"
+import ProductPriceTitle from "./ProductPriceTitle"
 
 interface PropsProductCardDetailed {
   product: ProductDetailed
@@ -27,12 +28,7 @@ const ProductCardDetailed: FC<PropsProductCardDetailed> = ({product}) => {
           <h5 className="font-medium">
             {condition} - {totalSelled} vendidos
           </h5>
-          <h3 className="text-lg font-bold">
-            {title}
-          </h3>
-          <span className="block font-extrabold text-3xl">
-            $ {price}
-          </span>
+          <ProductPriceTitle productPrice={price} productTitle={title} />
           <Button text="comprar" title={`Comprar producto ${id}`}/>
         </div>
       </div>
@@ -41,7 +37,7 @@ const ProductCardDetailed: FC<PropsProductCardDetailed> = ({product}) => {
           Descripción del producto
         </h2>
         <p className="text-gray-500 text-justify">
-          {description ? description : 'No existe una descripción del producto'}
+          {description ? description.replace(/=/g, '') : 'No existe una descripción del producto'}
         </p>
       </div>
     </div>

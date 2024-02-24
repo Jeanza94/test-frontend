@@ -9,7 +9,6 @@ interface PropProductContainerItemsPage {
 }
 
 const fetchData = async({limit, query}:PropProductContainerItemsPage) => {
-  console.log(limit, query)
   let url = 'http://localhost:8000/api/items'
   if(limit && !isNaN(Number(limit))) {
     url += `?limit=${limit}` 
@@ -17,12 +16,11 @@ const fetchData = async({limit, query}:PropProductContainerItemsPage) => {
   if(query && !(query.trim().length === 0)) {
     url +=  `${url.match(/\?/) ? '&' : '?'}q=${query}`  
   } 
-  console.log(url)
   try {
     const resp = await fetch(url)
     const freeMarketResponseProducts = await resp.json() as FreeMarketResponseProducts
     const products = freeMarketResponseProducts.items.map(item => mapFreeMarketItemToProduct(item))
-    return products
+    return {products, categories: freeMarketResponseProducts.categories}
   } catch (error) {
     console.log(error)
     throw new Error('Error fetchData ProductContainerItemsPage')
@@ -30,14 +28,23 @@ const fetchData = async({limit, query}:PropProductContainerItemsPage) => {
 }
 
 const ProductCardContainerItemsPage:FC<PropProductContainerItemsPage> = async({limit, query}) => {
-  const products = await fetchData({limit, query})
+  const {products, categories} = await fetchData({limit, query})
+  const categoryDescription = categories.toString().replace(/,/g, ' > ')
   return (
-    <section>
-      {
-        products.map(product => (
-          <ProductCardView product={product} key={product.id}/>
-        ))
-      }
+    <section className="mt-2 tablet:px-20">
+      <span className="text-xs text-gray-500">{categoryDescription}</span>
+      <div className="border-[1px] border-gray-50">
+        {
+          products.map((product, i) => (
+            <div key={product.id}>
+              <ProductCardView product={product}/>
+              {
+                <hr className={`border-b-[1px] border-b-gray-50 ${products.length - 1 === i ? 'hidden' : ''}`}/>
+              }
+            </div>
+          ))
+        }
+      </div>
     </section>
   )
 }
