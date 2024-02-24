@@ -3,7 +3,11 @@ export interface Product {
   id: string,
   image: string,
   title: string,
-  description?: string,
-  condition: string,
   price: number
+}
+
+export interface ProductDetailed extends Product {
+  description: string,
+  condition: string,
+  totalSelled: number,
 }
