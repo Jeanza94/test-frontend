@@ -9,7 +9,7 @@ export const useBanner = (imagesLength: number) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       nextImage()
-    }, 5000);
+    }, 3000);
     return () => {
       clearTimeout(timer)
     }

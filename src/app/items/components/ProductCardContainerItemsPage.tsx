@@ -2,6 +2,7 @@ import { FC } from "react"
 import { FreeMarketResponseProducts } from '../interfaces/freeMarket';
 import { mapFreeMarketItemToProduct } from "../utils/freeMarketProductMapper";
 import ProductCardView from "./ProductCardView";
+import ProductNotFound from "./ProductNotFound";
 
 interface PropProductContainerItemsPage {
   query?: string,
@@ -29,6 +30,7 @@ const fetchData = async({limit, query}:PropProductContainerItemsPage) => {
 
 const ProductCardContainerItemsPage:FC<PropProductContainerItemsPage> = async({limit, query}) => {
   const {products, categories} = await fetchData({limit, query})
+  if(products.length === 0) return <ProductNotFound />
   const categoryDescription = categories.toString().replace(/,/g, ' > ')
   return (
     <section className="mt-2 tablet:px-20">
