@@ -11,9 +11,12 @@ const Banner:FC<PropsBanner> = ({images}) => {
   const [currentImagePosition, setCurrentImagePosition] = useState(0)
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       nextImage()
     }, 5000);
+    return () => {
+      clearTimeout(timer)
+    }
   }, [currentImagePosition])
 
   const nextImage = () => {
