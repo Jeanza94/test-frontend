@@ -9,7 +9,7 @@ const Header = () => {
       <nav 
         className='flex flex-col tablet:flex-row justify-center desktop:justify-between items-center gap-4'
       >
-        <Link href={'/'}>
+        <Link href={'/'} title='ir a la página principal' className='hover:shadow-sm transition-all ease-in duration-200'>
           <picture>
             <Image 
               src={'/images/logo-mercado-libre.webp'}

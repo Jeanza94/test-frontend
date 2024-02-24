@@ -25,7 +25,7 @@ const FormSearchProducts = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className='w-100% tablet:w-96 flex hover:border-[1px] hover:border-secondary-base  transition-colors ease-in duration-200'>
+      <label className='w-100% tablet:w-96 flex transition-colors ease-in duration-200'>
           <Input 
             type='text'
             placeholder='Nunca dejes de buscar'

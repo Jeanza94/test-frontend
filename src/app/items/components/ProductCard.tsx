@@ -1,7 +1,6 @@
 import { FC } from "react"
 import Image from "next/image"
 import { Product } from "../interfaces/product"
-import Link from "next/link"
 import ProductPicture from "./ProductPicture"
 import ProductLink from "./ProductLink"
 

@@ -1,4 +1,6 @@
+import { Suspense } from 'react';
 import ProductCardContainerDetailedProduct from '../components/ProductCardContainerDetailedProduct';
+import ProductCardContainerDetailedProductSkeleton from '../components/skeletons/ProductCardContainerDetailedProductSkeleton';
 
 const ProductPageDetailed = async({params}: {params: {id: string}}) => {
   const id = params.id
@@ -6,7 +8,10 @@ const ProductPageDetailed = async({params}: {params: {id: string}}) => {
 
   return (
     <>
-      <ProductCardContainerDetailedProduct productId={id}/>
+      <Suspense fallback={<ProductCardContainerDetailedProductSkeleton />}>
+        <ProductCardContainerDetailedProduct productId={id}/>
+      </Suspense>
+      
     </>
   )
 }
