@@ -13,7 +13,7 @@ const ProductPicture: FC<PropsProductPicture> = ({productImage}) => {
         alt='Imagen producto'
         width={90}
         height={90}
-        className="w-40 h-auto"
+        className="w-40 h-auto rounded-lg"
       />
     </picture>
   )

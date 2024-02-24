@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import ProductCardContainerItemsPage from "./components/ProductCardContainerItemsPage"
+import ProductCardContainerItemsPageSkeleton from "./components/skeletons/ProductCardContainerItemsPageSkeleton"
 
 interface PropsItemsPage {
   searchParams: {
@@ -12,15 +13,16 @@ const ItemsPage = ({searchParams}: PropsItemsPage) => {
   
   const {q, limit} = searchParams
   return (
-    <div>
-      <Suspense key={`product${q ? q : '' }`} fallback={<p>cargando</p>}>
+    <>
+      <Suspense fallback={<ProductCardContainerItemsPageSkeleton />}>
         <ProductCardContainerItemsPage 
           query={q}
           limit={limit}
           key={`item${q}`}
         />
       </Suspense>
-    </div>
+      
+    </>
   )
 }
 

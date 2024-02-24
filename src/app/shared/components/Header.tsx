@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Header = () => {
   return (
-    <header className='bg-primary py-2 px-8 h-28 tablet:h-14 fixed w-full'>
+    <header className='bg-primary py-2 px-8 h-28 tablet:h-14 fixed w-full z-10'>
       <nav 
         className='flex flex-col tablet:flex-row justify-center desktop:justify-between items-center gap-4'
       >
