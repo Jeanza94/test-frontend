@@ -1,7 +1,11 @@
 
 const ItemsPage = () => {
   return (
-    <div>ItemsPage</div>
+    <>
+      <section>
+        
+      </section>
+    </>
   )
 }
 

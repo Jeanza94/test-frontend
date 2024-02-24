@@ -4,7 +4,7 @@ import FormSearchProducts from '@/app/items/components/FormSearchProducts'
 
 const Header = () => {
   return (
-    <header className='bg-primary py-2 px-8 h-28 tablet:h-14'>
+    <header className='bg-primary py-2 px-8 h-28 tablet:h-14 fixed w-full'>
       <nav 
         className='flex flex-col tablet:flex-row justify-center desktop:justify-between items-center gap-4'
       >
