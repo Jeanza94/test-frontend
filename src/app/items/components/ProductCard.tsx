@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Product } from "../interfaces/product"
 import Link from "next/link"
 import ProductPicture from "./ProductPicture"
+import ProductLink from "./ProductLink"
 
 interface PropsProductCard {
   product: Product
@@ -25,13 +26,7 @@ const ProductCard:FC<PropsProductCard> = ({product}) => {
         {product.title}
       </p>
 
-      <Link 
-        href={`/items/${product.id}`}
-        className="text-xs text-secondary-base text-center"
-        title={`Ver producto ${product.id}`}
-      >
-        Ver detalle
-      </Link>
+      <ProductLink productId={product.id}/>
     </div>
   )
 }
