@@ -34,7 +34,7 @@ const ProductCard:FC<PropsProductCard> = ({product}) => {
 
       <Link 
         href={`/items/${product.id}`}
-        className="text-xs text-secondary text-center"
+        className="text-xs text-secondary-base text-center"
         title={`Ver producto ${product.id}`}
       >
         Ver detalle

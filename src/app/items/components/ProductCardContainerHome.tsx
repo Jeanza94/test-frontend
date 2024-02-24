@@ -13,7 +13,7 @@ const ProductCardContainerHome = async() => {
     throw new Error('error ProductContainerHome')
   }
   return (
-    <section className="mt-2 mb-2 flex flex-wrap gap-4 justify-center px-2">
+    <section className="mt-4 flex flex-wrap gap-4 justify-center px-2">
       {
         products.map(product => (
           <ProductCard product={product} key={product.id}/>

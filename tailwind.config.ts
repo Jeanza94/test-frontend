@@ -14,7 +14,11 @@ const config: Config = {
       },
       colors: {
         primary: "#ffe600",
-        secondary: "#3483fa"
+        secondary: {
+          light: "#609efb",
+          base: "#3483fa",
+          dark: "#032963"
+        }
       },
       screens: {
         mobile: '200px',

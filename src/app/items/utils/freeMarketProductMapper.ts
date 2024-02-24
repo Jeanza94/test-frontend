@@ -11,7 +11,7 @@ export const mapFreeMarketItemToProduct = (item: Item | ItemDescription): Produc
 }
 
 export const mapFreeMarketItemDescriptionToProduct = (item: ItemDescription): ProductDetailed => {
-  const commonAttributes = mapFreeMarketItemDescriptionToProduct(item)
+  const commonAttributes = mapFreeMarketItemToProduct(item)
   return {
     ...commonAttributes,
     condition: item.condition,
