@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image"
 import { FC, useEffect, useState } from "react"
+import { useBanner } from "../hooks/useBanner"
 
 interface PropsBanner {
   images: string[]
@@ -8,20 +9,7 @@ interface PropsBanner {
 
 const Banner:FC<PropsBanner> = ({images}) => {
   
-  const [currentImagePosition, setCurrentImagePosition] = useState(0)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      nextImage()
-    }, 5000);
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [currentImagePosition])
-
-  const nextImage = () => {
-    setCurrentImagePosition(prev => prev === images.length -1 ? 0 : prev + 1)
-  }
+  const { currentImagePosition } = useBanner(images.length)
 
   return (
     <figure>
