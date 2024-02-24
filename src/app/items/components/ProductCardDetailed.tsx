@@ -1,6 +1,7 @@
 import { FC } from "react"
 import Image from "next/image"
 import { ProductDetailed } from "../interfaces/product"
+import Button from "@/app/shared/components/Button"
 
 interface PropsProductCardDetailed {
   product: ProductDetailed
@@ -39,9 +40,7 @@ const ProductCardDetailed: FC<PropsProductCardDetailed> = ({product}) => {
           <span className="block font-extrabold text-3xl">
             $ {price}
           </span>
-          <button className="bg-secondary-base text-white p-2 hover:bg-secondary-light active:bg-secondary-dark transition-colors ease-in duration-200">
-            Comprar
-          </button>
+          <Button text="comprar" title={`Comprar producto ${id}`}/>
         </div>
       </div>
       <div className="mt-8">
