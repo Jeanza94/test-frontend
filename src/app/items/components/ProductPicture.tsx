@@ -14,6 +14,7 @@ const ProductPicture: FC<PropsProductPicture> = ({productImage}) => {
         width={90}
         height={90}
         className="w-40 h-auto rounded-lg"
+        sizes="160px"
       />
     </picture>
   )
