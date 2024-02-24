@@ -4,6 +4,7 @@ import { Product } from "../interfaces/product";
 export const mapFreeMarketItemToProduct = (item: Item | ItemDescription): Product => {
   return {
     condition: item.condition,
+    id: item.id,
     image: item.picture,
     price: item.price.amount,
     title: item.title 
