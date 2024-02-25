@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import FormSearchProducts from '@/app/items/components/FormSearchProducts'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 
 const Header = () => {
@@ -21,7 +22,9 @@ const Header = () => {
             />
           </picture>
         </Link>
-        <FormSearchProducts />
+        <Suspense>
+          <FormSearchProducts />
+        </Suspense>
       </nav>
     </header>
   )

@@ -1,6 +1,4 @@
-'use client'
 
-import ProductNotFound from "./items/components/ProductNotFound"
 
 const NotFound = () => {
   return (

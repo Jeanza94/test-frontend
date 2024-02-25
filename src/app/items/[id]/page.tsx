@@ -17,7 +17,7 @@ export const generateMetadata = ({params}: PropsProductPageDetailed): Metadata =
   }
 }
 
-const ProductPageDetailed = async({params}: PropsProductPageDetailed) => {
+const ProductPageDetailed = ({params}: PropsProductPageDetailed) => {
   const id = params.id
   if(!id || !id.startsWith("MLA")) throw new Error('Ese producto no existe')
 
