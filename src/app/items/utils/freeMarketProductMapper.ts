@@ -5,7 +5,7 @@ export const mapFreeMarketItemToProduct = (item: Item | ItemDescription): Produc
   return {
     id: item.id,
     image: item.picture,
-    price: item.price.amount,
+    price: item.price.amount * 0.0012,
     title: item.title 
   }
 }

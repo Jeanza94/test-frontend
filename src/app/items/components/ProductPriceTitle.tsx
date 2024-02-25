@@ -22,7 +22,7 @@ const ProductPriceTitle:FC<PropsProductPriceTitle> = ({
         {productTitle}
       </h3>
       <span className={twMerge("block font-semibold text-3xl", spanClassName)}>
-        $ {productPrice}
+        $ {productPrice.toFixed(2)}
       </span>
     </div>
   )
