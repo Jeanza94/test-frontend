@@ -1,8 +1,6 @@
 import { FC } from "react"
-import { ProductDetailed } from "../interfaces/product"
-import { ItemDescription } from "../interfaces/freeMarket"
-import { mapFreeMarketItemDescriptionToProduct } from "../utils/freeMarketProductMapper"
 import ProductCardDetailed from "./ProductCardDetailed"
+import { fetchProductById } from "../actions"
 
 interface PropsProductCardContainerDetailedProduct {
   productId: string
@@ -10,18 +8,8 @@ interface PropsProductCardContainerDetailedProduct {
 
 const ProductCardContainerDetailedProduct:FC<PropsProductCardContainerDetailedProduct> = async({productId}) => {
 
+  const productDetailed = await fetchProductById(productId) 
 
-  let productDetailed: ProductDetailed
-  try {
-    const resp = await fetch(`http://localhost:8000/api/items/${productId}`, {
-      next: {revalidate: 3600 * 24}
-    })
-    const itemDescription = await resp.json() as ItemDescription
-    productDetailed = mapFreeMarketItemDescriptionToProduct(itemDescription)
-  } catch (error) {
-    console.log(error)
-    throw new Error('Error ProductCardContainerDetailedProduct')
-  }
   return (
     <section className="h-full px-2 mt-6 flex justify-center items-center">
       <ProductCardDetailed product={productDetailed}/>
