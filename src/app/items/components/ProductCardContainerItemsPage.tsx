@@ -21,8 +21,8 @@ const ProductCardContainerItemsPage:FC<PropProductContainerItemsPage> = async({l
   
   return (
     <section className="mt-2 tablet:px-20">
-      <span className="text-xs text-gray-500">{categoryDescription}</span>
-      <div className="border-[1px] border-gray-50">
+      <span className="text-xs text-gray-500 ps-2">{categoryDescription}</span>
+      <div className="border-[1px] border-gray-50 ps-2">
         {
           products.map((product, i) => (
             <div key={product.id}>
