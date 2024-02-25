@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Banner from "./shared/components/Banner";
 import ProductCardContainerHome from "./items/components/ProductCardContainerHome";
+
 const images = [
   'main-banner/banner-1.webp',
   'main-banner/banner-2.webp',

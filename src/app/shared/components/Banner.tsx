@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import { FC, useEffect, useState } from "react"
+import { FC } from "react"
 import { useBanner } from "../hooks/useBanner"
 
 interface PropsBanner {
@@ -19,7 +19,7 @@ const Banner:FC<PropsBanner> = ({images}) => {
         width={1920}
         height={500}
         className="w-full h-40 tablet:w-full tablet:h-auto object-cover"
-        sizes="160px"
+        sizes="100vw"
       />
     </figure>
   )
