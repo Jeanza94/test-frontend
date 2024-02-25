@@ -20,6 +20,7 @@ const Banner:FC<PropsBanner> = ({images}) => {
         height={500}
         className="w-full h-40 tablet:w-full tablet:h-auto object-cover"
         sizes="100vw"
+        priority
       />
     </figure>
   )

@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <main className="pt-28 pb-10 min-h-screen tablet:pt-14">
+        <main className="pt-28 pb-10 tablet:pt-14">
           {children}
         </main>
         <Footer />
