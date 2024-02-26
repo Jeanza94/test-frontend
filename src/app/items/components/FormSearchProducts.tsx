@@ -1,8 +1,8 @@
 'use client'
-import SearchLogo from '@/app/shared/components/SearchLogo'
-import Input from '@/app/shared/components/Input'
-import { useRouter, useSearchParams } from 'next/navigation'
 import { FormEvent, useRef } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import SearchLogo from '../../shared/components/SearchLogo'
+import Input from '../../shared/components/Input'
 
 const FormSearchProducts = () => {
   

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import FormSearchProducts from '@/app/items/components/FormSearchProducts'
+import FormSearchProducts from '../../items/components/FormSearchProducts'
 import Link from 'next/link'
 import { Suspense } from 'react'
 

@@ -1,7 +1,7 @@
 import { FC } from "react"
 import Image from "next/image"
 import { ProductDetailed } from "../interfaces/product"
-import Button from "@/app/shared/components/Button"
+import Button from "../../shared/components/Button"
 import ProductPicture from "./ProductPicture"
 import ProductPriceTitle from "./ProductPriceTitle"
 
