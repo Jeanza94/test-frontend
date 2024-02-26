@@ -7,8 +7,8 @@ const ProductCardDetailedSkeleton = () => {
         <div className="text-sm flex flex-col w-full gap-2 tablet:w-52 ">
           <div className="h-4 w-24 animate-pulse bg-gray-500"></div>
           <div className="w-28 h-5 animate-pulse bg-gray-500"></div>
-          <div className="w-52 tablet:w-full h-6 animate-pulse bg-gray-500"></div>
-          <div className="w-52 tablet:w-full h-6 animate-pulse bg-gray-500"></div>
+          <div className="w-52 tablet:w-full h-7 animate-pulse bg-gray-500"></div>
+          <div className="w-52 tablet:w-full h-7 animate-pulse bg-gray-500"></div>
         </div>
       </div>
       <div className="mt-8 flex flex-col gap-2">
