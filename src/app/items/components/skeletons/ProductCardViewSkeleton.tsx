@@ -5,7 +5,7 @@ const ProductCardViewSkeleton = () => {
       <div className="w-36 h-36 animate-pulse rounded-xl bg-gray-500 px-4"></div>
       <div className="flex flex-col gap-2 animate-pulse w-full">
         <div className="w-28 h-5 animate-pulse bg-gray-500"></div>
-        <div className="w-96 h-10 animate-pulse bg-gray-500"></div>
+        <div className="w-full tablet:w-96 h-10 animate-pulse bg-gray-500"></div>
       </div>
       <div className="w-28 h-5 animate-pulse bg-gray-500"></div>
     </div>

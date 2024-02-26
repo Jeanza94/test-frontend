@@ -9,7 +9,7 @@ const ProductLink:FC<PropsProductLink> = ({productId}) => {
   return (
     <Link 
       href={`/items/${productId}`}
-      className="text-xs text-secondary-base text-center"
+      className="text-xs text-secondary-base text-center hover:text-secondary-dark hover:font-bold transition-all ease-in duration-200"
       title={`Ver producto ${productId}`}
     >
       Ver detalle

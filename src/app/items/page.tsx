@@ -31,7 +31,7 @@ const ItemsPage = ({searchParams}: PropsItemsPage) => {
           key={`item${q}`}
         />
       </Suspense>
-      
+      <ProductCardContainerItemsPageSkeleton />
     </>
   )
 }

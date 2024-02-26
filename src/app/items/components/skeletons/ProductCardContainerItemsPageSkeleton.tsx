@@ -7,7 +7,10 @@ const ProductCardContainerItemsPageSkeleton = () => {
       <div className="border-[1px] border-gray-50">
         {
           [1,2,3].map(item => (
-            <ProductCardViewSkeleton key={item}/>
+            <div key={item}>
+              <ProductCardViewSkeleton/>
+              <hr />
+            </div>
           ))
         }
       </div>
