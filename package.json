@@ -15,7 +15,8 @@
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.2",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",

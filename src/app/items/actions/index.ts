@@ -12,7 +12,7 @@ export const fetchProducts = async({limit, query='futbol'}:{limit?: string, quer
   }
   if(query && !(query.trim().length === 0)) {
     urlProducts +=  `${urlProducts.match(/\?/) ? '&' : '?'}q=${query}`  
-  } 
+  }
   try {
     const resp = await fetch(urlProducts)
     const freeMarketResponseProducts = await resp.json() as FreeMarketResponseProducts
