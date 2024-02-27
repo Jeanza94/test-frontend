@@ -1,7 +1,9 @@
 
 export interface FreeMarketResponseProducts {
   categories: string[],
-  items: Item[]
+  items: Item[],
+  hasNextPage: boolean,
+  totalPages: number
 }
 
 export interface ItemDescription extends Item {
