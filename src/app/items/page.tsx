@@ -7,6 +7,7 @@ interface PropsItemsPage {
   searchParams: {
     q?: string,
     limit?: string
+    offset?: string
   }
 }
 export const dynamic = 'force-dynamic'
@@ -21,14 +22,15 @@ export const metadata: Metadata = {
 
 const ItemsPage = ({searchParams}: PropsItemsPage) => {
   
-  const {q, limit} = searchParams
+  const {q, limit, offset} = searchParams
   return (
     <>
       <Suspense fallback={<ProductCardContainerItemsPageSkeleton />}>
         <ProductCardContainerItemsPage 
           query={q}
           limit={limit}
-          key={`item${q}`}
+          offset={offset}
+          key={`item${q}${offset}`}
         />
       </Suspense>
     </>

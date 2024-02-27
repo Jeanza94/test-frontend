@@ -4,16 +4,18 @@ import { mapFreeMarketItemToProduct } from "../utils/freeMarketProductMapper";
 import ProductCardView from "./ProductCardView";
 import ProductNotFound from "./ProductNotFound";
 import { fetchProducts } from "../actions";
+import PaginatorProducts from "./PaginatorProducts";
 
 interface PropProductContainerItemsPage {
   query?: string,
-  limit?: string
+  limit?: string,
+  offset?: string
 }
 
 
 
-const ProductCardContainerItemsPage:FC<PropProductContainerItemsPage> = async({limit, query}) => {
-  const {products, categories} = await fetchProducts({limit, query})
+const ProductCardContainerItemsPage:FC<PropProductContainerItemsPage> = async({limit='4', query='', offset='0'}) => {
+  const {products, categories, hasNextPage, totalPages} = await fetchProducts({limit, query, offset})
 
   if(products.length === 0) return <ProductNotFound />
   
@@ -34,6 +36,13 @@ const ProductCardContainerItemsPage:FC<PropProductContainerItemsPage> = async({l
           ))
         }
       </div>
+      <PaginatorProducts 
+        totalPages={totalPages!} 
+        limit={isNaN(Number(limit)) ? 4 : Number(limit)} 
+        offset={isNaN(Number(offset)) ? 0 : Number(offset)} 
+        hasNextPage={hasNextPage!}
+        query={query!}
+      />
     </section>
   )
 }

@@ -5,7 +5,13 @@ import { mapFreeMarketItemDescriptionToProduct, mapFreeMarketItemToProduct } fro
 const url = envs.API_URL
 // const revalidate = 86400
 
-export const fetchProducts = async({limit, query='futbol'}:{limit?: string, query?: string}) => {
+interface OptionsFetchProducts {
+  limit?: string,
+  query?: string,
+  offset?: string
+}
+
+export const fetchProducts = async({limit, query='futbol', offset}:OptionsFetchProducts) => {
   let urlProducts = `${url}/items`
   if(limit && !isNaN(Number(limit))) {
     urlProducts += `?limit=${limit}` 
@@ -13,12 +19,16 @@ export const fetchProducts = async({limit, query='futbol'}:{limit?: string, quer
   if(query && !(query.trim().length === 0)) {
     urlProducts +=  `${urlProducts.match(/\?/) ? '&' : '?'}q=${query}`  
   }
+  if(offset && !(isNaN(Number(offset))) && Number(offset) < 1000) {
+    urlProducts +=  `${urlProducts.match(/\?/) ? '&' : '?'}q=${offset}`  
+  }
+  
   try {
     const resp = await fetch(urlProducts)
     const freeMarketResponseProducts: FreeMarketResponseProducts | {message: string} = await resp.json()
     if('message' in freeMarketResponseProducts) return {products: [], categories: []}
     const products = freeMarketResponseProducts.items.map(item => mapFreeMarketItemToProduct(item))
-    return {products, categories: freeMarketResponseProducts.categories}
+    return {products, categories: freeMarketResponseProducts.categories, hasNextPage: freeMarketResponseProducts.hasNextPage, totalPages: freeMarketResponseProducts.totalPages}
   } catch (error) {
     console.log(error)
     throw new Error('Error fetchProducts')
