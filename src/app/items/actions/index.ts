@@ -15,7 +15,8 @@ export const fetchProducts = async({limit, query='futbol'}:{limit?: string, quer
   }
   try {
     const resp = await fetch(urlProducts)
-    const freeMarketResponseProducts = await resp.json() as FreeMarketResponseProducts
+    const freeMarketResponseProducts: FreeMarketResponseProducts | {message: string} = await resp.json()
+    if('message' in freeMarketResponseProducts) return {products: [], categories: []}
     const products = freeMarketResponseProducts.items.map(item => mapFreeMarketItemToProduct(item))
     return {products, categories: freeMarketResponseProducts.categories}
   } catch (error) {
